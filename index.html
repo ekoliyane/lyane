@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyane Portal - Aplikasi Bermanfaat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/umd/lucide.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #1e293b 0%, #4338ca 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-mesh {
+            background-color: #f8fafc;
+            background-image: radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.05) 0, transparent 50%), 
+                              radial-gradient(at 50% 0%, rgba(244, 63, 94, 0.05) 0, transparent 50%), 
+                              radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.05) 0, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-mesh text-slate-800 min-h-screen">
+
+    <!-- Header Section -->
+    <header class="pt-20 pb-16 px-6 text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 border border-slate-200 shadow-sm mb-8">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span>
+            </span>
+            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">Monitoring Sistem Real-time</span>
+        </div>
+        <h1 class="text-6xl font-black tracking-tight mb-4 gradient-text">lyane.my.id</h1>
+        <p class="text-lg text-slate-500 max-w-2xl mx-auto leading-relaxed">
+            Menghadirkan solusi digital yang menginspirasi ketenangan dan produktivitas dalam setiap baris kode.
+        </p>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 pb-24">
+        
+        <!-- App Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24" id="app-grid">
+            
+            <!-- Kenal Nabi Card -->
+            <div class="glass-card p-8 rounded-[2.5rem] flex flex-col group cursor-pointer" onclick="handleAppClick('Kenal Nabi', 'https://kenalnabi.vercel.app/')">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="p-4 rounded-2xl bg-amber-50 text-amber-600 border border-amber-100 group-hover:bg-amber-100 transition-colors">
+                        <i data-lucide="sparkles" class="w-8 h-8"></i>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Akses</p>
+                        <p class="text-xl font-bold text-slate-900" id="stats-Kenal Nabi">0</p>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-indigo-600 transition-colors">Kenal Nabi</h3>
+                <p class="text-slate-500 text-sm mb-8 leading-relaxed flex-grow">
+                    Eksplorasi mendalam sirah nabawiyah dan karakter Rasulullah SAW sebagai teladan abadi umat manusia.
+                </p>
+                <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
+                    <span class="text-xs font-bold text-amber-600 px-2 py-1 rounded bg-amber-50">Edukasi</span>
+                    <div class="flex items-center text-indigo-600 font-bold text-sm">
+                        Mulai <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sakinah Card -->
+            <div class="glass-card p-8 rounded-[2.5rem] flex flex-col group cursor-pointer" onclick="handleAppClick('Sakinah', 'https://sakinah-3t7g.vercel.app/')">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="p-4 rounded-2xl bg-indigo-50 text-indigo-600 border border-indigo-100 group-hover:bg-indigo-100 transition-colors">
+                        <i data-lucide="wind" class="w-8 h-8"></i>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Akses</p>
+                        <p class="text-xl font-bold text-slate-900" id="stats-Sakinah">0</p>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-1 group-hover:text-indigo-600 transition-colors">Sakinah</h3>
+                <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-4 block">Islamic Theta Relaxation</span>
+                <p class="text-slate-500 text-sm mb-8 leading-relaxed flex-grow">
+                    Temukan ketenangan di tengah hiruk-pikuk pekerjaan melalui kombinasi Al-Qur'an dan Nature White Noise.
+                </p>
+                <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
+                    <span class="text-xs font-bold text-indigo-600 px-2 py-1 rounded bg-indigo-50">Relaksasi</span>
+                    <div class="flex items-center text-indigo-600 font-bold text-sm">
+                        Masuk <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hafalanku Card -->
+            <div class="glass-card p-8 rounded-[2.5rem] flex flex-col group cursor-pointer" onclick="handleAppClick('Hafalanku', 'http://hafalanku.vercel.app/')">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="p-4 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-100 group-hover:bg-emerald-100 transition-colors">
+                        <i data-lucide="book-open" class="w-8 h-8"></i>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Akses</p>
+                        <p class="text-xl font-bold text-slate-900" id="stats-Hafalanku">0</p>
+                    </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-3 group-hover:text-indigo-600 transition-colors">Hafalanku</h3>
+                <p class="text-slate-500 text-sm mb-8 leading-relaxed flex-grow">
+                    Platform monitoring hafalan Al-Qur'an yang memudahkan Anda menjaga konsistensi muraja'ah setiap hari.
+                </p>
+                <div class="flex items-center justify-between mt-auto pt-6 border-t border-slate-100">
+                    <span class="text-xs font-bold text-emerald-600 px-2 py-1 rounded bg-emerald-50">Ibadah</span>
+                    <div class="flex items-center text-indigo-600 font-bold text-sm">
+                        Buka <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Dashboard Analytics -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
+            <!-- Stats Visual -->
+            <div class="lg:col-span-2 bg-white rounded-[3rem] p-10 shadow-sm border border-slate-200">
+                <div class="flex items-center justify-between mb-10">
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-900">Analitik Popularitas</h4>
+                        <p class="text-sm text-slate-400 mt-1">Distribusi interaksi pengguna per aplikasi</p>
+                    </div>
+                    <div class="p-3 bg-indigo-50 rounded-2xl text-indigo-600">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+                    </div>
+                </div>
+                <div class="space-y-8" id="popularity-bars">
+                    <div class="flex items-center justify-center py-12 text-slate-400 italic text-sm">
+                        Menghubungkan ke pusat data...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feed -->
+            <div class="bg-slate-900 rounded-[3rem] p-10 text-white shadow-2xl relative overflow-hidden">
+                <div class="relative z-10 h-full flex flex-col">
+                    <h4 class="text-xl font-bold mb-8 flex items-center gap-2">
+                        <i data-lucide="activity" class="w-5 h-5 text-indigo-400"></i> Aktivitas Terkini
+                    </h4>
+                    <div class="space-y-6 flex-grow" id="recent-activity">
+                        <div class="text-slate-500 text-sm italic">Menunggu interaksi pertama...</div>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-800">
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest">Total Kunjungan</p>
+                        <p class="text-3xl font-black text-indigo-400 mt-1" id="total-clicks">0</p>
+                    </div>
+                </div>
+                <!-- Background Decoration -->
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-indigo-600/10 rounded-full blur-3xl"></div>
+            </div>
+        </div>
+
+        <!-- Contact CTA -->
+        <section class="bg-white border border-slate-200 rounded-[3.5rem] p-12 md:p-20 text-center shadow-xl relative overflow-hidden">
+            <div class="relative z-10">
+                <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-4 py-2 rounded-full uppercase tracking-[0.2em] mb-6 inline-block">Kolaborasi Digital</span>
+                <h2 class="text-4xl md:text-5xl font-black mb-6 text-slate-900">Wujudkan Ide Anda</h2>
+                <p class="text-slate-500 mb-12 max-w-2xl mx-auto text-lg leading-relaxed">
+                    Butuh aplikasi web khusus untuk yayasan, masjid, atau komunitas? Saya siap membantu mewujudkannya dengan teknologi terkini.
+                </p>
+                <a href="https://wa.me/6285643573687?text=Halo%20Lyane,%20saya%20ingin%20diskusi%20pembuatan%20aplikasi%20bermanfaat." 
+                   target="_blank"
+                   class="inline-flex items-center px-10 py-5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-2xl transition-all shadow-lg hover:shadow-indigo-200 hover:-translate-y-1 active:scale-95">
+                    <i data-lucide="message-square" class="w-6 h-6 mr-3"></i> Konsultasi via WhatsApp
+                </a>
+                <p class="mt-6 text-sm text-slate-400 font-medium">Nomor Layanan: 0856-4357-3687</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-16 text-center text-slate-400 border-t border-slate-100">
+        <div class="flex justify-center gap-8 mb-8">
+            <a href="#" class="hover:text-indigo-600 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+            <a href="#" class="hover:text-indigo-600 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+            <a href="#" class="hover:text-indigo-600 transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+        </div>
+        <p class="text-xs font-bold uppercase tracking-[0.3em] mb-2">Copyright &copy; 2026 lyane.my.id</p>
+        <p class="text-[10px] italic">"The best of people are those that bring most benefit to others"</p>
+    </footer>
+
+    <!-- Firebase Logic -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, doc, setDoc, getDoc, onSnapshot, addDoc, updateDoc, increment, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const firebaseConfig = JSON.parse(__firebase_config);
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'lyane-portal-2026';
+
+        let currentUser = null;
+
+        // 1. Authentication
+        const initAuth = async () => {
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            } catch (err) { console.error("Auth Failure:", err); }
+        };
+
+        // 2. Track Clicks
+        window.handleAppClick = async (appName, url) => {
+            window.open(url, '_blank');
+            if (!currentUser) return;
+
+            try {
+                const clickRef = doc(db, 'artifacts', appId, 'public', 'data', 'click_stats', appName);
+                const docSnap = await getDoc(clickRef);
+                
+                if (docSnap.exists()) {
+                    await updateDoc(clickRef, { count: increment(1), lastClicked: serverTimestamp() });
+                } else {
+                    await setDoc(clickRef, { appName, count: 1, lastClicked: serverTimestamp() });
+                }
+
+                await addDoc(collection(db, 'artifacts', appId, 'public', 'data', 'click_history'), {
+                    appName, timestamp: serverTimestamp()
+                });
+            } catch (err) { console.error(err); }
+        };
+
+        // 3. Sync Analytics UI
+        const startAnalytics = () => {
+            if (!currentUser) return;
+
+            // Global Statistics
+            onSnapshot(collection(db, 'artifacts', appId, 'public', 'data', 'click_stats'), (snapshot) => {
+                let total = 0;
+                let apps = [];
+                
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    const count = data.count || 0;
+                    total += count;
+                    apps.push({ name: doc.id, count });
+
+                    const el = document.getElementById(`stats-${doc.id}`);
+                    if (el) el.innerText = count.toLocaleString();
+                });
+
+                const totalEl = document.getElementById('total-clicks');
+                if (totalEl) totalEl.innerText = total.toLocaleString();
+                
+                renderPopularityBars(apps, total);
+            });
+
+            // Live Feed
+            onSnapshot(collection(db, 'artifacts', appId, 'public', 'data', 'click_history'), (snapshot) => {
+                const logs = [];
+                snapshot.forEach(d => logs.push(d.data()));
+                logs.sort((a, b) => (b.timestamp?.seconds || 0) - (a.timestamp?.seconds || 0));
+                
+                const container = document.getElementById('recent-activity');
+                if (container && logs.length > 0) {
+                    container.innerHTML = logs.slice(0, 4).map(log => `
+                        <div class="flex items-start gap-4 animate-in fade-in duration-700">
+                            <div class="w-1 h-10 bg-indigo-500/30 rounded-full mt-1"></div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-100">${log.appName} diakses</p>
+                                <p class="text-[10px] text-slate-500 uppercase tracking-tighter">
+                                    ${log.timestamp ? new Date(log.timestamp.seconds * 1000).toLocaleTimeString() : 'Baru saja'}
+                                </p>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            });
+        };
+
+        const renderPopularityBars = (apps, total) => {
+            const container = document.getElementById('popularity-bars');
+            if (!container || total === 0) return;
+
+            const colorMap = {
+                'Kenal Nabi': 'bg-amber-500',
+                'Sakinah': 'bg-indigo-600',
+                'Hafalanku': 'bg-emerald-500'
+            };
+
+            container.innerHTML = apps.map(app => {
+                const percent = Math.round((app.count / total) * 100);
+                const color = colorMap[app.name] || 'bg-slate-500';
+                return `
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+                            <span>${app.name}</span>
+                            <span>${percent}%</span>
+                        </div>
+                        <div class="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                            <div class="h-full ${color} transition-all duration-1000" style="width: ${percent}%"></div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        };
+
+        window.onload = () => {
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+            initAuth();
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    currentUser = user;
+                    startAnalytics();
+                }
+            });
+        };
+    </script>
+</body>
+</html>
